@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".AddCategoryActivity">
+
+    <!-- כותרת עליונה -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/shape_toolbar01">
+
+        <!-- כפתור חזרה עם אייקון -->
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/back_arrow_icon"
+            android:background="@android:color/transparent"
+            android:layout_margin="20dp"
+            android:padding="5dp"
+            android:contentDescription="@string/back_button_description"/>
+
+        <!-- לוגו מרכזי -->
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/logo"/>
+
+        <!-- טקסט במרכז הכותרת -->
+        <TextView
+            android:layout_below="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Add New Mission To Do"
+            android:textColor="@color/white"
+            android:textSize="30dp"/>
+
+    </RelativeLayout>
+
+    <!-- שדה הזנת קטגוריה קיימת -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/categoryTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="225dp">
+
+        <!-- תיבת טקסט להוספת קטגוריה -->
+        <EditText
+            android:id="@+id/categoryEt"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/shape_edittext01"
+            android:drawableStart="@drawable/todo_icon"
+            android:drawablePadding="20dp"
+            android:hint="Mission To Do ..."
+            android:inputType="textPersonName|textCapWords"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey01"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- שדה הזנת רשימת משימות חדשה -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/todoListTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="300dp">
+
+        <!-- תיבת טקסט לרשימת משימות (רק קוד, יש להוסיף את השדה בפועל אם נדרש) -->
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- כפתור שליחה -->
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_btn01"
+        android:text="Submit"
+        android:layout_below="@+id/todoListTil"
+        android:textColor="@color/white"/>
+</RelativeLayout>
